@@ -1,0 +1,48 @@
+important file :
+
+C:\xampp\htdocs\studentsProject\routes\web.php -> untuk routing
+
+C:\xampp\htdocs\cobaLaravel\.env -> database env
+
+C:\xampp\htdocs\studentsProject\database\migrations\2019_08_19_000000_create_failed_jobs_table.php -> migration file
+     >php artisan make:migration create_students_table
+
+C:\xampp\htdocs\studentsProject\resources\views\mahasiswa\index.blade.php -> view (MVC)
+     >buat sendiri (bootstrap)
+
+C:\xampp\htdocs\studentsProject\app\Mahasiswa.php -> model (MVC) (if using database)
+     >php artisan make:model Student
+
+C:\xampp\htdocs\studentsProject\app\Http\Controllers\MahasiswaController.php -> controller (MVC)
+     >php artisan make:controller StudentsController -r 
+
+     Seeder : 
+     php artisan make:seed StudentsSeeder    
+
+======================
+
+migration :
+
+php artisan migrate > untuk migrasi file yg ada di "C:\xampp\htdocs\studentsProject\database\migrations\*"
+php artisan migrate:rollback > untuk mengembalikan migrasi terakhir (undo) 
+
+ beberapa fungsi lain :
+      migrate
+      migrate:fresh > menghapus semua data dulu, trus rolling back, trus migrate ulang (hati hati loh make ini wkwkwk)
+      migrate:install
+      migrate:refresh   
+      migrate:reset
+      migrate:rollback
+      migrate:status
+
+membuat model :
+php artisan make:model Student   > table Students dan dgn model Student. (otomatis)
+     > jika nama database(s) dan model berbeda lakukan : protected $table = 'mahasiswa'; (jika table di database = mahasiswa)
+     > jika primary key tidak default (id) lakukan : protected $primaryKey = 'mahasiswa_id';
+
+
+delete binding
+==========================================
+1. create 2020_03_07_153317_add_soft_delete_to_students dan masukkan data
+2. use SoftDeletes; //in model
+

@@ -1,0 +1,80 @@
+pwd >> untuk cek direktori (git)
+cd .. >> back
+cd {} >> go
+//lebih cepat dengan cara drag
+ls >> menampilkan list
+clear >> utk clear
+
+composer create-project --prefer-dist laravel/laravel cobaLaravel
+folder /public untuk open
+
+cara routing ada di : routes\web.php
+isi nya ini: 
+Route::get('/', function () {
+    return view('welcome');
+});
+dia buka file bernama welcome, ada di : resources\views\welcome.blade.php
+
+laravel punya sesuatu yg disebut 'tamplating engine'
+@yield('title')
+@extends('layout/main') == @extends('layout.main')
+
+controller : app/controller
+php artisan make:controller PagesController
+php artisan make:controller MahasiswaController --resources //sama dengan
+php artisan make:controller MahasiswaController -r
+
+ctrl+p >> cari file
+ctrl+` >> view terminal
+
+ada 2 cara ngambil data dari database:
+-manual, buat database
+-migration  *magic
+
+Untuk konek (query)
+-query builder
+-Eloquent *magic
+
+.env => utk database => akan menimpa config di : config/database.php
+
+
+@csrf >> untuk mengamankan (berupa token) >> create.blade.php >> dimasukkan ke dalam form
+(cross side resources forgery)
+    protected $fillable = ['nama', 'nik', 'email', 'jurusan']; //mass assigment
+    // guarded
+
+
+    php artisan route:list
+
+
+    php artisan make:migration add_soft_delete_to_students
+    php artisan migrate
+
+
+    ///////////////////////////
+
+    git init
+    heroku login
+    heroku create "students-app"
+    git remote add heroku "https://git.heroku.com/students-app.git"
+
+    //////////////////
+
+rm -Force  .git/index.lock >>> if running
+    heroku login
+    git init  //to initialize a new repo
+    git add --all 
+    git commit -m "my 3 commit"   >>>>> git config --global user.email "symnababan@gmail.com"
+    git add Procfile
+    git commit -m "Heroku Procfile"
+    heroku create <myappname>
+    heroku buildpacks:set heroku/php
+    php artisan key:generate --show  
+    heroku config:set APP_KEY=base64:6vu5T3gaNPrKlK4IVWkHz3prbkJ8cyN1n+j/gGczNaU=
+    go to config/app.php and set 'log’=>’errorlog’
+
+
+    !    Please verify your account to install this add-on plan (please enter a credit card) For more information, see
+    !    https://devcenter.heroku.com/categories/billing Verify now at https://heroku.com/
+    
+    
